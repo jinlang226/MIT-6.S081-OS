@@ -6,12 +6,13 @@
   * resume its work
 1. asynchronous
 2. concurrency (operating parellal)
-3. programm device
+3. program device
 
 # driver manages device
 uart.c
 
 top: read/ write
+queue
 bottom: interrupt handler
 
 # programming device
@@ -54,4 +55,9 @@ bottom: interrupt handler
 * simple
 * now slow, device is more complicated  
 
-# polling: fast device instruction
+# polling 轮询: fast device instruction
+* CPU ask device if it need service
+* reading control register, check if there is a byte there
+  * CPU spins until device has data, waste CPU cycles if device is slow
+  * but if device is fast, it saves entry/ exit cost
+* Dynamically switch between polling and interrupt
