@@ -25,3 +25,4 @@ program counter(pc), registers, stack
   * running - CPU
   * runnable - save pc, regs
   * sleeping
+ 
